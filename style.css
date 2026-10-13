@@ -8,3 +8,33 @@
 @media(max-width:850px){.hero{padding-top:65px}.hero-grid{grid-template-columns:1fr;gap:30px}.hero-copy{max-width:650px}.hero-visual{min-height:380px}.visual-card{width:350px}.intro-grid{gap:40px}.contact-grid{gap:35px}.nav{gap:20px}.section-pad{padding:78px 0}}
 @media(max-width:650px){.container{width:min(100% - 36px,520px)}.header{height:72px}.brand{width:145px;height:64px}.menu-toggle{display:block;cursor:pointer}.nav{display:none;position:absolute;top:71px;left:0;right:0;padding:20px 24px 25px;background:#fff;border-bottom:1px solid var(--line);box-shadow:0 14px 20px #102f680c;flex-direction:column;align-items:stretch;gap:17px}.nav.open{display:flex}.nav-cta{text-align:center}.hero{padding-top:52px}.hero-grid{padding-bottom:55px}.hero h1{font-size:43px;letter-spacing:-1px}.hero-text{font-size:14px}.hero-actions{align-items:stretch;flex-direction:column}.button{width:100%}.hero-note{margin-top:25px}.hero-visual{min-height:340px}.visual-card{height:300px;width:300px;padding:23px}.visual-symbols{margin:32px 0 23px;gap:16px}.symbol-circle{width:88px;height:88px}.symbol-circle svg{width:42px}.floating-tag{left:0;bottom:18px;padding:11px 13px}.visual-orbit.orbit-a{width:340px;height:340px}.visual-orbit.orbit-b{width:380px;height:380px}.bottom-inner{gap:12px;font-size:8px;letter-spacing:1px}.section-pad{padding:68px 0}.intro-grid,.contact-grid{grid-template-columns:1fr;gap:25px}.intro h2,.section-heading h2{font-size:37px}.section-heading{display:block;margin-bottom:28px}.section-heading>p{margin-top:15px}.service-grid{grid-template-columns:1fr}.service-card{min-height:0;padding:25px}.service-icon{margin-bottom:17px}.contact h2{font-size:40px}.contact-side{padding:28px;min-height:330px}.footer-inner{padding:24px 0;align-items:flex-start;flex-direction:column;gap:10px}.footer p{margin:0}.copyright{margin-top:4px}}
 @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}*,*::before,*::after{transition:none!important}}
+
+/* Animações sutis para dar vida à página */
+@keyframes fadeUp{from{opacity:0;transform:translateY(24px)}to{opacity:1;transform:translateY(0)}}
+@keyframes fadeIn{from{opacity:0}to{opacity:1}}
+@keyframes floatCard{0%,100%{transform:translateY(0) rotate(2deg)}50%{transform:translateY(-10px) rotate(1deg)}}
+@keyframes floatTag{0%,100%{transform:translateY(0)}50%{transform:translateY(-7px)}}
+@keyframes softPulse{0%,100%{box-shadow:0 0 0 5px #079d9e1a}50%{box-shadow:0 0 0 9px #079d9e0b}}
+@keyframes orbitSpin{from{transform:rotate(0deg)}to{transform:rotate(360deg)}}
+.hero-copy .eyebrow{animation:fadeUp .65s ease both}
+.hero-copy h1{animation:fadeUp .8s .08s ease both}
+.hero-copy .hero-text{animation:fadeUp .8s .17s ease both}
+.hero-copy .hero-actions{animation:fadeUp .8s .25s ease both}
+.hero-note{animation:fadeIn 1s .55s ease both}
+.hero-visual{animation:fadeIn 1s .18s ease both}
+.visual-card{animation:floatCard 6s ease-in-out infinite}
+.floating-tag{animation:floatTag 4.5s ease-in-out infinite}
+.eyebrow-dot{animation:softPulse 2.5s ease-in-out infinite}
+.orbit-a{animation:orbitSpin 45s linear infinite}
+.orbit-b{animation:orbitSpin 65s linear infinite reverse}
+.service-card{opacity:0;transform:translateY(22px);transition:opacity .65s ease,transform .65s ease,box-shadow .25s,border-color .25s}
+.service-card.is-visible{opacity:1;transform:translateY(0)}
+.service-card:nth-child(2){transition-delay:.12s}
+.service-card:nth-child(3){transition-delay:.24s}
+.intro-grid,.section-heading,.contact-copy,.contact-side{opacity:0;transform:translateY(20px);transition:opacity .7s ease,transform .7s ease}
+.intro-grid.is-visible,.section-heading.is-visible,.contact-copy.is-visible,.contact-side.is-visible{opacity:1;transform:translateY(0)}
+.contact-row .contact-icon{transition:transform .25s ease,background .25s ease}
+.contact-row:hover .contact-icon{transform:scale(1.08);background:#ffffff12}
+.button-primary span,.button-light span,.nav-cta span{display:inline-block;transition:transform .2s ease}
+.button-primary:hover span,.button-light:hover span,.nav-cta:hover span{transform:translate(3px,-2px)}
+@media(prefers-reduced-motion:reduce){*,*::before,*::after{animation:none!important;scroll-behavior:auto!important;transition:none!important}.service-card,.intro-grid,.section-heading,.contact-copy,.contact-side{opacity:1;transform:none}}
