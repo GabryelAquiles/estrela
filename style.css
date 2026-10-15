@@ -38,3 +38,18 @@
 .button-primary span,.button-light span,.nav-cta span{display:inline-block;transition:transform .2s ease}
 .button-primary:hover span,.button-light:hover span,.nav-cta:hover span{transform:translate(3px,-2px)}
 @media(prefers-reduced-motion:reduce){*,*::before,*::after{animation:none!important;scroll-behavior:auto!important;transition:none!important}.service-card,.intro-grid,.section-heading,.contact-copy,.contact-side{opacity:1;transform:none}}
+
+.footer-email {
+  margin: 1rem 0; /* Adiciona espaço acima e abaixo */
+}
+
+.footer-email a {
+  color: #fff; /* Cor branca para o link */
+  text-decoration: none; /* Remove o sublinhado */
+  font-weight: 500;
+  transition: opacity 0.3s;
+}
+
+.footer-email a:hover {
+  opacity: 0.8; /* Efeito suave ao passar o mouse */
+}
